@@ -16,6 +16,7 @@ public class HoleHandler : MonoBehaviour
                 other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             }
 
+            //enable destroying the object after a certain amount of time - just in case we fail to destroy it otherwise
             if (other.gameObject.GetComponent<DestroyAfterSeconds>())
             {
                 other.gameObject.GetComponent<DestroyAfterSeconds>().enabled = true;

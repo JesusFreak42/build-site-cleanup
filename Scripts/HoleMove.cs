@@ -15,13 +15,10 @@ public class HoleMove : MonoBehaviour
 
         if (!Application.isMobilePlatform)
         { //On PC, move the hole based on mouse position
-            // if (_input.GetMousePos() == Vector2.zero) return; //avoid a mobile bug where mousePos starts initially at 0,0 with no touches
-
             Vector2 mousePos = new Vector2(
                 Mathf.Clamp(_input.GetMousePos().x / Screen.width - 0.5f, -0.5f, 0.5f),
                 Mathf.Clamp(_input.GetMousePos().y / Screen.height - 0.5f, -0.5f, 0.5f)
             ); //mouse position relative to screen size - where the middle of the screen is 0,0 and the values are clamped between -0.5 and 0.5
-            // Debug.Log(mousePos);
 
             transform.position = new Vector3(
                 Mathf.Clamp(transform.position.x + mousePos.x * moveSpeed * Time.deltaTime, -worldMoveBounds.x, worldMoveBounds.x),

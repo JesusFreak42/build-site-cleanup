@@ -9,7 +9,7 @@ public class SoundController : MonoBehaviour
 
     [SerializeField] private AudioClip music;
     private bool musicPlaying = true;
-    // [SerializeField] private AudioClip paperCrumple;
+    // [SerializeField] private AudioClip sfxClip;
 
     private bool muted = false;
     [SerializeField] private Image muteImg;
@@ -61,8 +61,8 @@ public class SoundController : MonoBehaviour
         musicPlaying = false;
     }
 
-    // public void PlayPaperCrumple(){
-    //     sfxSource.PlayOneShot(paperCrumple);
+    // public void PlaySFXClip(){
+    //     sfxSource.PlayOneShot(sfxClip);
     // }
 
     public void SetVolume(){

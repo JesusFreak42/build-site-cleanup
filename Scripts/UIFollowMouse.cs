@@ -7,6 +7,7 @@ public class UIFollowMouse : MonoBehaviour
 
     void Update()
     {
+        //every frame, this UI element matches the mouse position
         gameObject.GetComponent<RectTransform>().position = _input.GetMousePos();
     }
 }

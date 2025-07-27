@@ -11,18 +11,20 @@ public class MeasureCleaningArea : MonoBehaviour
 
     private void Start()
     {
+        //measure how many edible objects are inside this box's area
         Collider[] edibles = Physics.OverlapBox(transform.position, transform.localScale / 2, Quaternion.identity, edibleLayers);
         initialDirtiness = edibles.Length;
         dirtiness = initialDirtiness;
-        SetProgressBar();
+        SetProgressBar(); //set the progress bar accordingly
     }
 
     private void OnTriggerExit(Collider other)
-    {
+    { //when an object leaves this box's area, recalculate the dirtiness still to be cleaned up
         Collider[] edibles = Physics.OverlapBox(transform.position, transform.localScale / 2, Quaternion.identity, edibleLayers);
         dirtiness = edibles.Length;
         SetProgressBar();
         
+        //check if the player won the game
         if (progressBar.GetValue() >= progressBar.GetMaxValue())
         {
             uiHandler.WinGame();

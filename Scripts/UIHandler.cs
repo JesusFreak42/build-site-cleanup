@@ -15,7 +15,7 @@ public class UIHandler : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Confined; //confine the cursor to the game window
 
         if (Application.isMobilePlatform)
         {
